@@ -38,7 +38,7 @@ RUN set -ex; \
 
 RUN git clone --depth=1 --branch=master https://github.com/ajanis/Plex-to-InfluxDB-Extended.git /plex-influxdb-collector \
     ; \
-    rm -rf /opt/plex-influxdb-collector/.git
+    rm -rf /plex-influxdb-collector/.git
 
 RUN cd /plex-influxdb-collector \
     ; \
