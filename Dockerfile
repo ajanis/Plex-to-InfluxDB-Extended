@@ -36,19 +36,23 @@ RUN set -ex; \
     ; \
     rm -f get-pip.py
 
-RUN git clone --depth=1 --branch=master https://github.com/ajanis/Plex-to-InfluxDB-Extended.git /opt/plex-influxdb-collector \
+RUN git clone --depth=1 --branch=master https://github.com/ajanis/Plex-to-InfluxDB-Extended.git /plex-influxdb-collector \
     ; \
     rm -rf /opt/plex-influxdb-collector/.git
 
-RUN cd /opt/plex-influxdb-collector \
+RUN cd /plex-influxdb-collector \
     ; \
     pip3 install -r requirements.txt \
     ; \
+    mkdir -p /var/log/plex-influxdb-collector \
+    ; \
     apt-get purge -y --auto-remove $buildDeps
 
-COPY custom-config.ini /opt/plex-influxdb-collector/config.ini
+#COPY custom-config.ini /opt/plex-influxdb-collector/config.ini
 COPY contrib/etc/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 STOPSIGNAL SIGTERM
 
 CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+
+# docker run -d -v /data/configs/plex-influxdb-collector:/plex-influxdb-collector --name plex-influx plex-influx
