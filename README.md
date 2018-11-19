@@ -69,7 +69,7 @@ You can build a docker image to run this script with the included Dockerfile (No
 
 *Python 3+*
 
-You will need the [*influxdb library*](https://github.com/influxdata/influxdb-python) installed to use this.  This is installed via the following command:
+You will need the [*InfluxDB library*](https://github.com/influxdata/influxdb-python) and [*Plex API library*](https://github.com/pkkid/python-plexapi)installed to use this.  These are installed via the following command:
 
 ```
 pip3 install -r requirements.txt
