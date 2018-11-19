@@ -1,29 +1,40 @@
 **Plex to InfluxDB Extended**
 ------------------------------
-This project forked from the original, awesome [Plex-Data-Collector-For-InfluxDB by barrycarey](https://github.com/barrycarey/Plex-Data-Collector-For-InfluxDB).
+A tool for collecting info from your Plex server and sending it to InfluxDB.  This is ideal for displaying Plex specific information in a tool such as Grafana.
+*This project forked from the original, awesome [Plex-Data-Collector-For-InfluxDB by barrycarey](https://github.com/barrycarey/Plex-Data-Collector-For-InfluxDB).*
 
-![Screenshot](https://puu.sh/tarSA/aea875c453.png)
-
-This is a tool for collecting info from your Plex server and sending it to InfluxDB.  This is ideal for displaying Plex specific information in a tool such as Grafana.
-
-**Docker**
-
-You can find a docker image for running this script on [Docker Hub](https://hub.docker.com/r/kurzondax/plex-to-influx-extended/)
+![Screenshot](https://home.prettybaked.com/mediascreenshot/dashboard-plex.png)
 
 
-## Known Issues
-* Any libraries containing TV shows that aren't named "TV Shows" won't return season or episode counts for the library statistics.  The title "TV Shows" was hard coded in to the original python script that I forked this from.  This can be fixed so that episodes will be counted for any library containing TV shows, but it may be a few days before I'll have time to work on it.
-* Currently, the python script assumes that the Plex server is always listening on port 32400.  If your server uses a different port, no data will be collected.  I will be adding code to recognize IPaddress:Port from the config file.
-* Exceedingly large libraries may cause the script to bog down when updating total library stats.  I will be adding a new value to the config.ini file that will allow specifying a separate interval for collecting library stats.
 
-## Configuration within config.ini
+#### Dockerized setup with Supervisord
 
-#### GENERAL
+You can build a docker image to run this script with the included Dockerfile or use the Ansible playbook that is part of this Ansible Mediaserver role: [Ansible Role for Plex Media Server, Supporting NZB download services, Webserver + Reverse Proxy, SMB + AFP Fileserver - with support for CephFS and NFS Backends](https://github.com/ajanis/ansible-mediaserver).
+
+Uses [supervisord](http://supervisord.org/) to daemonize the python script.
+
+__If you've deployed your media environment using this role, this container will be started alongside your Plex Media Server.__
+
+#### "Live" Dashboard Example
+This hosted dashboard snapshot will allow you view / drill down on sample data for the included dashboard.
+
+*Note: This dashboard makes use of the sysstat, iostat, cpu, netstat and ceph Telegraph plugins.  The plex-specific data at the top is generated specifically from this InfluxDB collector.*
+
+[Plex Media Server, Host and Ceph Data](https://snapshot.raintank.io/dashboard/snapshot/1lK1zf90QwGa4uYz7BW0i3i1wRK3cj87)
+
+![Screenshot](https://home.prettybaked.com/mediascreenshot/dashboard-full.png)
+
+
+#### Configuration witin config.ini
+
+*Note: If using the Ansible playbook, a config.ini will be generated (from group_vars) on your Docker server and mounted inside your container*
+
+###### General
 |Key            |Description                                                                                                         |
 |:--------------|:-------------------------------------------------------------------------------------------------------------------|
 |Delay          |Delay between updating metrics                                                                                      |
 |Output         |Write console output while tool is running                                                                          |
-#### INFLUXDB
+###### InfluxDB
 |Key            |Description                                                                                                         |
 |:--------------|:-------------------------------------------------------------------------------------------------------------------|
 |Address        |IP address or FQDN of influxdb server                                                                               |
@@ -31,13 +42,13 @@ You can find a docker image for running this script on [Docker Hub](https://hub.
 |Database       |Database to write collected stats to                                                                                |
 |Username       |User that has access to the database                                                                                |
 |Password       |Password for above user                                                                                             |
-#### PLEX
+###### Plex
 |Key            |Description                                                                                                         |
 |:--------------|:-------------------------------------------------------------------------------------------------------------------|
 |Username       |Plex username                                                                                                       |
 |Password       |Plex Password                                                                                                       |
 |Servers        |A comma separated list of servers you wish to pull data from.                                                       |
-#### LOGGING
+###### Logging
 |Key            |Description                                                                                                         |
 |:--------------|:-------------------------------------------------------------------------------------------------------------------|
 |Enable         |Output logging messages to provided log file                                                                        |
@@ -46,25 +57,25 @@ You can find a docker image for running this script on [Docker Hub](https://hub.
 |CensorLogs     |Censor certain things like server names and IP addresses from logs                                                  |
 
 
-### Usage
+#### Usage
 
 Enter your desired information in config.ini and run plexInfluxdbCollector.py
 
 Optionally, you can specify the --config argument to load the config file from a different location.  
 
-A Docker image is also available here: https://hub.docker.com/r/kurzondax/plex-to-influx-extended/
+You can build a docker image to run this script with the included Dockerfile (Note: Uses supervisord to daemonize the script) or use the Ansible playbook that is part of this Ansible Mediaserver role: [Ansible Role for Plex Media Server, Supporting NZB download services, Webserver + Reverse Proxy, SMB + AFP Fileserver - with support for CephFS and NFS Backends](https://github.com/ajanis/ansible-mediaserver).
 
-#### Requirements
+##### Requirements
 
 *Python 3+*
 
-You will need the [*influxdb library*](https://github.com/influxdata/influxdb-python) installed to use this.  Typically this can be installed from the command line using:
+You will need the [*influxdb library*](https://github.com/influxdata/influxdb-python) installed to use this.  This is installed via the following command:
 
 ```
-pip3 install influxdb
+pip3 install -r requirements.txt
 ```
 
-## InfluxDB Fields
+#### InfluxDB Fields
 |Field              |Description                                                                                            |
 |:------------------|:------------------------------------------------------------------------------------------------------|
 |media_type         | Movie, TV Show, Music, or Unknown                                                                     |
@@ -94,14 +105,14 @@ pip3 install influxdb
 |status             | Current session status (playing, paused, buffering)                                                   |
 
 
-#### Notes:
+##### Notes:
 The start_time and duration fields are manually calculated by the application based on when it first receives data about a session.  It is accurate to within the value used for ***delay*** in the config.ini file.
 Since the Plex API doesn't provide retrospective information for streams that are already in-progress, the duration and start_time will be calculated based on when Plex-Data-Collector-Extend is started.
 
 ***Grafana and start_time field***
 If you are using Grafana to generate a dashboard, the start_time field will appear to have an incorrect date.  To resolve this, use a math operator to multiply the start_time field by 1000.
 
-## InfluxDB Tags
+#### InfluxDB Tags
 |Tag                |Description                                                                                            |
 |:------------------|:------------------------------------------------------------------------------------------------------|
 |host               |Name of Plex server that stream is being played from                                                   |
@@ -109,7 +120,7 @@ If you are using Grafana to generate a dashboard, the start_time field will appe
 |session_id         |Plex internal ID number for playback session                                                           |
 
 
-# Version History
+#### Version History
 
 |Version            |Description                                                                                            |
 |:------------------|:------------------------------------------------------------------------------------------------------|
