@@ -1,54 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PLEX",
-      "label": "plex",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "influxdb",
-      "pluginName": "InfluxDB"
-    },
-    {
-      "name": "DS_INFLUXDB",
-      "label": "InfluxDB",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "influxdb",
-      "pluginName": "InfluxDB"
-    }
-  ],
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "5.3.2"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph",
-      "version": "5.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "influxdb",
-      "name": "InfluxDB",
-      "version": "5.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "singlestat",
-      "name": "Singlestat",
-      "version": "5.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": "5.0.0"
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -67,8 +17,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 2,
-  "id": null,
-  "iteration": 1542642926015,
+  "id": 3,
+  "iteration": 1546295579317,
   "links": [],
   "panels": [
     {
@@ -93,7 +43,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(12, 176, 38, 0.9)"
       ],
-      "datasource": "${DS_PLEX}",
+      "datasource": "influx-plex",
       "editable": true,
       "error": false,
       "format": "none",
@@ -213,7 +163,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(12, 176, 38, 0.9)"
       ],
-      "datasource": "${DS_PLEX}",
+      "datasource": "influx-plex",
       "editable": true,
       "error": false,
       "format": "none",
@@ -322,7 +272,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(12, 176, 38, 0.9)"
       ],
-      "datasource": "${DS_PLEX}",
+      "datasource": "influx-plex",
       "editable": true,
       "error": false,
       "format": "none",
@@ -450,7 +400,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(12, 176, 38, 0.9)"
       ],
-      "datasource": "${DS_PLEX}",
+      "datasource": "influx-plex",
       "editable": true,
       "error": false,
       "format": "none",
@@ -572,7 +522,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(12, 176, 38, 0.9)"
       ],
-      "datasource": "${DS_PLEX}",
+      "datasource": "influx-plex",
       "editable": true,
       "error": false,
       "format": "none",
@@ -687,10 +637,10 @@
     },
     {
       "columns": [],
-      "datasource": "${DS_PLEX}",
+      "datasource": "influx-plex",
       "editable": true,
       "error": false,
-      "fontSize": "130%",
+      "fontSize": "100%",
       "gridPos": {
         "h": 7,
         "w": 24,
@@ -864,35 +814,125 @@
       "type": "row"
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorPostfix": true,
-      "colorPrefix": true,
-      "colorValue": true,
       "colors": [
-        "#508642",
-        "#cca300",
-        "#bf1b00"
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "${DS_INFLUXDB}",
       "decimals": 2,
-      "description": "",
+      "fontSizes": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70
+      ],
+      "fontTypes": [
+        "Arial",
+        "Avant Garde",
+        "Bookman",
+        "Consolas",
+        "Courier",
+        "Courier New",
+        "Garamond",
+        "Helvetica",
+        "Open Sans",
+        "Palatino",
+        "Times",
+        "Times New Roman",
+        "Verdana"
+      ],
       "format": "percent",
       "gauge": {
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.1,
+        "gaugeRadius": 80,
+        "gaugeUnits": "",
+        "innerCol": "rgb(255, 255, 255)",
+        "labelFontSize": 20,
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
         "maxValue": 100,
         "minValue": 0,
-        "show": true,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
+        "needleCol": "rgb(213, 60, 0)",
+        "needleLengthNeg": 0.2,
+        "needleTickGap": 0,
+        "needleWidth": 5,
+        "outerEdgeCol": "rgb(25, 25, 25)",
+        "padding": 0.05,
+        "pivotCol": "#0a437c",
+        "pivotRadius": 0.1,
+        "showLowerThresholdRange": true,
+        "showMiddleThresholdRange": true,
+        "showThresholdColorOnBackground": false,
+        "showThresholdColorOnValue": false,
+        "showThresholdOnGauge": true,
+        "showUpperThresholdRange": true,
+        "tickColMaj": "#1f78c1",
+        "tickColMin": "rgb(0, 0, 0)",
+        "tickEdgeGap": 0.05,
+        "tickFont": "Consolas",
+        "tickLabelCol": "#0a437c",
+        "tickLengthMaj": 0.1,
+        "tickLengthMin": 0.05,
+        "tickSpaceMajVal": 10,
+        "tickSpaceMinVal": 1,
+        "tickWidthMaj": 5,
+        "tickWidthMin": 1,
+        "ticknessGaugeBasis": 200,
+        "unitsFont": "Consolas",
+        "unitsLabelCol": "#052b51",
+        "unitsLabelFontSize": 40,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
       },
+      "gaugeDivId": "d3gauge_svg_72",
       "gridPos": {
         "h": 6,
-        "w": 2,
+        "w": 3,
         "x": 0,
         "y": 12
       },
-      "id": 54,
-      "interval": null,
+      "id": 72,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -905,13 +945,15 @@
           "value": 2
         }
       ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
+      "operatorName": "avg",
+      "operatorNameOptions": [
+        "min",
+        "max",
+        "avg",
+        "current",
+        "total",
+        "name"
+      ],
       "rangeMaps": [
         {
           "from": "null",
@@ -919,16 +961,9 @@
           "to": "null"
         }
       ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
+      "svgContainer": {},
       "targets": [
         {
-          "alias": "$tag_device",
           "groupBy": [
             {
               "params": [
@@ -943,10 +978,10 @@
               "type": "fill"
             }
           ],
-          "hide": true,
+          "measurement": "disk",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT 100 - (last(\"free\") /  last(\"total\")) * 100 AS \"% used\" FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.127:/') AND $timeFilter GROUP BY time(10s), \"device\" fill(null)",
+          "query": "SELECT last(\"osd_bytes_used\")  /  last(\"osd_bytes\") * 100 FROM \"ceph\"",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -954,67 +989,983 @@
             [
               {
                 "params": [
-                  "value"
+                  "total"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "last"
               }
             ]
           ],
-          "tags": []
-        },
-        {
-          "groupBy": [],
-          "measurement": "ceph",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT last(\"osd_bytes_used\")  /  last(\"osd_bytes\") * 100 FROM \"ceph\" WHERE $timeFilter",
-          "rawQuery": true,
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "osd_bytes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [
-                  " / "
-                ],
-                "type": "math"
-              }
-            ],
-            [
-              {
-                "params": [
-                  "osd_bytes_used"
-                ],
-                "type": "field"
-              }
-            ]
-          ],
-          "tags": []
+          "tags": [
+            {
+              "key": "device",
+              "operator": "=",
+              "value": "192.168.1.128:6789,192.168.1.129:6789:/"
+            }
+          ]
         }
       ],
-      "thresholds": "50,80",
+      "thresholds": "60,80",
+      "tickMaps": [],
       "title": "Ceph Cluster Utilization",
-      "transparent": false,
-      "type": "singlestat",
-      "valueFontSize": "70%",
+      "type": "briangann-gauge-panel",
+      "unitFormats": [
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(0,0)",
+              "text": "none",
+              "value": "none"
+            },
+            {
+              "click": "menuItemSelected(0,1)",
+              "text": "short",
+              "value": "short"
+            },
+            {
+              "click": "menuItemSelected(0,2)",
+              "text": "percent (0-100)",
+              "value": "percent"
+            },
+            {
+              "click": "menuItemSelected(0,3)",
+              "text": "percent (0.0-1.0)",
+              "value": "percentunit"
+            },
+            {
+              "click": "menuItemSelected(0,4)",
+              "text": "Humidity (%H)",
+              "value": "humidity"
+            },
+            {
+              "click": "menuItemSelected(0,5)",
+              "text": "decibel",
+              "value": "dB"
+            },
+            {
+              "click": "menuItemSelected(0,6)",
+              "text": "hexadecimal (0x)",
+              "value": "hex0x"
+            },
+            {
+              "click": "menuItemSelected(0,7)",
+              "text": "hexadecimal",
+              "value": "hex"
+            },
+            {
+              "click": "menuItemSelected(0,8)",
+              "text": "scientific notation",
+              "value": "sci"
+            },
+            {
+              "click": "menuItemSelected(0,9)",
+              "text": "locale format",
+              "value": "locale"
+            }
+          ],
+          "text": "none"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(1,0)",
+              "text": "Dollars ($)",
+              "value": "currencyUSD"
+            },
+            {
+              "click": "menuItemSelected(1,1)",
+              "text": "Pounds (£)",
+              "value": "currencyGBP"
+            },
+            {
+              "click": "menuItemSelected(1,2)",
+              "text": "Euro (€)",
+              "value": "currencyEUR"
+            },
+            {
+              "click": "menuItemSelected(1,3)",
+              "text": "Yen (¥)",
+              "value": "currencyJPY"
+            },
+            {
+              "click": "menuItemSelected(1,4)",
+              "text": "Rubles (₽)",
+              "value": "currencyRUB"
+            },
+            {
+              "click": "menuItemSelected(1,5)",
+              "text": "Hryvnias (₴)",
+              "value": "currencyUAH"
+            },
+            {
+              "click": "menuItemSelected(1,6)",
+              "text": "Real (R$)",
+              "value": "currencyBRL"
+            },
+            {
+              "click": "menuItemSelected(1,7)",
+              "text": "Danish Krone (kr)",
+              "value": "currencyDKK"
+            },
+            {
+              "click": "menuItemSelected(1,8)",
+              "text": "Icelandic Króna (kr)",
+              "value": "currencyISK"
+            },
+            {
+              "click": "menuItemSelected(1,9)",
+              "text": "Norwegian Krone (kr)",
+              "value": "currencyNOK"
+            },
+            {
+              "click": "menuItemSelected(1,10)",
+              "text": "Swedish Krona (kr)",
+              "value": "currencySEK"
+            },
+            {
+              "click": "menuItemSelected(1,11)",
+              "text": "Czech koruna (czk)",
+              "value": "currencyCZK"
+            },
+            {
+              "click": "menuItemSelected(1,12)",
+              "text": "Swiss franc (CHF)",
+              "value": "currencyCHF"
+            },
+            {
+              "click": "menuItemSelected(1,13)",
+              "text": "Polish Złoty (PLN)",
+              "value": "currencyPLN"
+            },
+            {
+              "click": "menuItemSelected(1,14)",
+              "text": "Bitcoin (฿)",
+              "value": "currencyBTC"
+            }
+          ],
+          "text": "currency"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(2,0)",
+              "text": "Hertz (1/s)",
+              "value": "hertz"
+            },
+            {
+              "click": "menuItemSelected(2,1)",
+              "text": "nanoseconds (ns)",
+              "value": "ns"
+            },
+            {
+              "click": "menuItemSelected(2,2)",
+              "text": "microseconds (µs)",
+              "value": "µs"
+            },
+            {
+              "click": "menuItemSelected(2,3)",
+              "text": "milliseconds (ms)",
+              "value": "ms"
+            },
+            {
+              "click": "menuItemSelected(2,4)",
+              "text": "seconds (s)",
+              "value": "s"
+            },
+            {
+              "click": "menuItemSelected(2,5)",
+              "text": "minutes (m)",
+              "value": "m"
+            },
+            {
+              "click": "menuItemSelected(2,6)",
+              "text": "hours (h)",
+              "value": "h"
+            },
+            {
+              "click": "menuItemSelected(2,7)",
+              "text": "days (d)",
+              "value": "d"
+            },
+            {
+              "click": "menuItemSelected(2,8)",
+              "text": "duration (ms)",
+              "value": "dtdurationms"
+            },
+            {
+              "click": "menuItemSelected(2,9)",
+              "text": "duration (s)",
+              "value": "dtdurations"
+            },
+            {
+              "click": "menuItemSelected(2,10)",
+              "text": "duration (hh:mm:ss)",
+              "value": "dthms"
+            },
+            {
+              "click": "menuItemSelected(2,11)",
+              "text": "Timeticks (s/100)",
+              "value": "timeticks"
+            },
+            {
+              "click": "menuItemSelected(2,12)",
+              "text": "clock (ms)",
+              "value": "clockms"
+            },
+            {
+              "click": "menuItemSelected(2,13)",
+              "text": "clock (s)",
+              "value": "clocks"
+            }
+          ],
+          "text": "time"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(3,0)",
+              "text": "YYYY-MM-DD HH:mm:ss",
+              "value": "dateTimeAsIso"
+            },
+            {
+              "click": "menuItemSelected(3,1)",
+              "text": "DD/MM/YYYY h:mm:ss a",
+              "value": "dateTimeAsUS"
+            },
+            {
+              "click": "menuItemSelected(3,2)",
+              "text": "From Now",
+              "value": "dateTimeFromNow"
+            }
+          ],
+          "text": "date & time"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(4,0)",
+              "text": "bits",
+              "value": "bits"
+            },
+            {
+              "click": "menuItemSelected(4,1)",
+              "text": "bytes",
+              "value": "bytes"
+            },
+            {
+              "click": "menuItemSelected(4,2)",
+              "text": "kibibytes",
+              "value": "kbytes"
+            },
+            {
+              "click": "menuItemSelected(4,3)",
+              "text": "mebibytes",
+              "value": "mbytes"
+            },
+            {
+              "click": "menuItemSelected(4,4)",
+              "text": "gibibytes",
+              "value": "gbytes"
+            }
+          ],
+          "text": "data (IEC)"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(5,0)",
+              "text": "bits",
+              "value": "decbits"
+            },
+            {
+              "click": "menuItemSelected(5,1)",
+              "text": "bytes",
+              "value": "decbytes"
+            },
+            {
+              "click": "menuItemSelected(5,2)",
+              "text": "kilobytes",
+              "value": "deckbytes"
+            },
+            {
+              "click": "menuItemSelected(5,3)",
+              "text": "megabytes",
+              "value": "decmbytes"
+            },
+            {
+              "click": "menuItemSelected(5,4)",
+              "text": "gigabytes",
+              "value": "decgbytes"
+            }
+          ],
+          "text": "data (Metric)"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(6,0)",
+              "text": "packets/sec",
+              "value": "pps"
+            },
+            {
+              "click": "menuItemSelected(6,1)",
+              "text": "bits/sec",
+              "value": "bps"
+            },
+            {
+              "click": "menuItemSelected(6,2)",
+              "text": "bytes/sec",
+              "value": "Bps"
+            },
+            {
+              "click": "menuItemSelected(6,3)",
+              "text": "kilobits/sec",
+              "value": "Kbits"
+            },
+            {
+              "click": "menuItemSelected(6,4)",
+              "text": "kilobytes/sec",
+              "value": "KBs"
+            },
+            {
+              "click": "menuItemSelected(6,5)",
+              "text": "megabits/sec",
+              "value": "Mbits"
+            },
+            {
+              "click": "menuItemSelected(6,6)",
+              "text": "megabytes/sec",
+              "value": "MBs"
+            },
+            {
+              "click": "menuItemSelected(6,7)",
+              "text": "gigabytes/sec",
+              "value": "GBs"
+            },
+            {
+              "click": "menuItemSelected(6,8)",
+              "text": "gigabits/sec",
+              "value": "Gbits"
+            }
+          ],
+          "text": "data rate"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(7,0)",
+              "text": "hashes/sec",
+              "value": "Hs"
+            },
+            {
+              "click": "menuItemSelected(7,1)",
+              "text": "kilohashes/sec",
+              "value": "KHs"
+            },
+            {
+              "click": "menuItemSelected(7,2)",
+              "text": "megahashes/sec",
+              "value": "MHs"
+            },
+            {
+              "click": "menuItemSelected(7,3)",
+              "text": "gigahashes/sec",
+              "value": "GHs"
+            },
+            {
+              "click": "menuItemSelected(7,4)",
+              "text": "terahashes/sec",
+              "value": "THs"
+            },
+            {
+              "click": "menuItemSelected(7,5)",
+              "text": "petahashes/sec",
+              "value": "PHs"
+            },
+            {
+              "click": "menuItemSelected(7,6)",
+              "text": "exahashes/sec",
+              "value": "EHs"
+            }
+          ],
+          "text": "hash rate"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(8,0)",
+              "text": "ops/sec (ops)",
+              "value": "ops"
+            },
+            {
+              "click": "menuItemSelected(8,1)",
+              "text": "requests/sec (rps)",
+              "value": "reqps"
+            },
+            {
+              "click": "menuItemSelected(8,2)",
+              "text": "reads/sec (rps)",
+              "value": "rps"
+            },
+            {
+              "click": "menuItemSelected(8,3)",
+              "text": "writes/sec (wps)",
+              "value": "wps"
+            },
+            {
+              "click": "menuItemSelected(8,4)",
+              "text": "I/O ops/sec (iops)",
+              "value": "iops"
+            },
+            {
+              "click": "menuItemSelected(8,5)",
+              "text": "ops/min (opm)",
+              "value": "opm"
+            },
+            {
+              "click": "menuItemSelected(8,6)",
+              "text": "reads/min (rpm)",
+              "value": "rpm"
+            },
+            {
+              "click": "menuItemSelected(8,7)",
+              "text": "writes/min (wpm)",
+              "value": "wpm"
+            }
+          ],
+          "text": "throughput"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(9,0)",
+              "text": "millimetre (mm)",
+              "value": "lengthmm"
+            },
+            {
+              "click": "menuItemSelected(9,1)",
+              "text": "meter (m)",
+              "value": "lengthm"
+            },
+            {
+              "click": "menuItemSelected(9,2)",
+              "text": "feet (ft)",
+              "value": "lengthft"
+            },
+            {
+              "click": "menuItemSelected(9,3)",
+              "text": "kilometer (km)",
+              "value": "lengthkm"
+            },
+            {
+              "click": "menuItemSelected(9,4)",
+              "text": "mile (mi)",
+              "value": "lengthmi"
+            }
+          ],
+          "text": "length"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(10,0)",
+              "text": "Square Meters (m²)",
+              "value": "areaM2"
+            },
+            {
+              "click": "menuItemSelected(10,1)",
+              "text": "Square Feet (ft²)",
+              "value": "areaF2"
+            },
+            {
+              "click": "menuItemSelected(10,2)",
+              "text": "Square Miles (mi²)",
+              "value": "areaMI2"
+            }
+          ],
+          "text": "area"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(11,0)",
+              "text": "milligram (mg)",
+              "value": "massmg"
+            },
+            {
+              "click": "menuItemSelected(11,1)",
+              "text": "gram (g)",
+              "value": "massg"
+            },
+            {
+              "click": "menuItemSelected(11,2)",
+              "text": "kilogram (kg)",
+              "value": "masskg"
+            },
+            {
+              "click": "menuItemSelected(11,3)",
+              "text": "metric ton (t)",
+              "value": "masst"
+            }
+          ],
+          "text": "mass"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(12,0)",
+              "text": "metres/second (m/s)",
+              "value": "velocityms"
+            },
+            {
+              "click": "menuItemSelected(12,1)",
+              "text": "kilometers/hour (km/h)",
+              "value": "velocitykmh"
+            },
+            {
+              "click": "menuItemSelected(12,2)",
+              "text": "miles/hour (mph)",
+              "value": "velocitymph"
+            },
+            {
+              "click": "menuItemSelected(12,3)",
+              "text": "knot (kn)",
+              "value": "velocityknot"
+            }
+          ],
+          "text": "velocity"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(13,0)",
+              "text": "millilitre (mL)",
+              "value": "mlitre"
+            },
+            {
+              "click": "menuItemSelected(13,1)",
+              "text": "litre (L)",
+              "value": "litre"
+            },
+            {
+              "click": "menuItemSelected(13,2)",
+              "text": "cubic metre",
+              "value": "m3"
+            },
+            {
+              "click": "menuItemSelected(13,3)",
+              "text": "Normal cubic metre",
+              "value": "Nm3"
+            },
+            {
+              "click": "menuItemSelected(13,4)",
+              "text": "cubic decimetre",
+              "value": "dm3"
+            },
+            {
+              "click": "menuItemSelected(13,5)",
+              "text": "gallons",
+              "value": "gallons"
+            }
+          ],
+          "text": "volume"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(14,0)",
+              "text": "Watt (W)",
+              "value": "watt"
+            },
+            {
+              "click": "menuItemSelected(14,1)",
+              "text": "Kilowatt (kW)",
+              "value": "kwatt"
+            },
+            {
+              "click": "menuItemSelected(14,2)",
+              "text": "Milliwatt (mW)",
+              "value": "mwatt"
+            },
+            {
+              "click": "menuItemSelected(14,3)",
+              "text": "Watt per square metre (W/m²)",
+              "value": "Wm2"
+            },
+            {
+              "click": "menuItemSelected(14,4)",
+              "text": "Volt-ampere (VA)",
+              "value": "voltamp"
+            },
+            {
+              "click": "menuItemSelected(14,5)",
+              "text": "Kilovolt-ampere (kVA)",
+              "value": "kvoltamp"
+            },
+            {
+              "click": "menuItemSelected(14,6)",
+              "text": "Volt-ampere reactive (var)",
+              "value": "voltampreact"
+            },
+            {
+              "click": "menuItemSelected(14,7)",
+              "text": "Kilovolt-ampere reactive (kvar)",
+              "value": "kvoltampreact"
+            },
+            {
+              "click": "menuItemSelected(14,8)",
+              "text": "Watt-hour (Wh)",
+              "value": "watth"
+            },
+            {
+              "click": "menuItemSelected(14,9)",
+              "text": "Kilowatt-hour (kWh)",
+              "value": "kwatth"
+            },
+            {
+              "click": "menuItemSelected(14,10)",
+              "text": "Kilowatt-min (kWm)",
+              "value": "kwattm"
+            },
+            {
+              "click": "menuItemSelected(14,11)",
+              "text": "Joule (J)",
+              "value": "joule"
+            },
+            {
+              "click": "menuItemSelected(14,12)",
+              "text": "Electron volt (eV)",
+              "value": "ev"
+            },
+            {
+              "click": "menuItemSelected(14,13)",
+              "text": "Ampere (A)",
+              "value": "amp"
+            },
+            {
+              "click": "menuItemSelected(14,14)",
+              "text": "Kiloampere (kA)",
+              "value": "kamp"
+            },
+            {
+              "click": "menuItemSelected(14,15)",
+              "text": "Milliampere (mA)",
+              "value": "mamp"
+            },
+            {
+              "click": "menuItemSelected(14,16)",
+              "text": "Volt (V)",
+              "value": "volt"
+            },
+            {
+              "click": "menuItemSelected(14,17)",
+              "text": "Kilovolt (kV)",
+              "value": "kvolt"
+            },
+            {
+              "click": "menuItemSelected(14,18)",
+              "text": "Millivolt (mV)",
+              "value": "mvolt"
+            },
+            {
+              "click": "menuItemSelected(14,19)",
+              "text": "Decibel-milliwatt (dBm)",
+              "value": "dBm"
+            },
+            {
+              "click": "menuItemSelected(14,20)",
+              "text": "Ohm (Ω)",
+              "value": "ohm"
+            },
+            {
+              "click": "menuItemSelected(14,21)",
+              "text": "Lumens (Lm)",
+              "value": "lumens"
+            }
+          ],
+          "text": "energy"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(15,0)",
+              "text": "Celsius (°C)",
+              "value": "celsius"
+            },
+            {
+              "click": "menuItemSelected(15,1)",
+              "text": "Farenheit (°F)",
+              "value": "farenheit"
+            },
+            {
+              "click": "menuItemSelected(15,2)",
+              "text": "Kelvin (K)",
+              "value": "kelvin"
+            }
+          ],
+          "text": "temperature"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(16,0)",
+              "text": "Millibars",
+              "value": "pressurembar"
+            },
+            {
+              "click": "menuItemSelected(16,1)",
+              "text": "Bars",
+              "value": "pressurebar"
+            },
+            {
+              "click": "menuItemSelected(16,2)",
+              "text": "Kilobars",
+              "value": "pressurekbar"
+            },
+            {
+              "click": "menuItemSelected(16,3)",
+              "text": "Hectopascals",
+              "value": "pressurehpa"
+            },
+            {
+              "click": "menuItemSelected(16,4)",
+              "text": "Kilopascals",
+              "value": "pressurekpa"
+            },
+            {
+              "click": "menuItemSelected(16,5)",
+              "text": "Inches of mercury",
+              "value": "pressurehg"
+            },
+            {
+              "click": "menuItemSelected(16,6)",
+              "text": "PSI",
+              "value": "pressurepsi"
+            }
+          ],
+          "text": "pressure"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(17,0)",
+              "text": "Newton-meters (Nm)",
+              "value": "forceNm"
+            },
+            {
+              "click": "menuItemSelected(17,1)",
+              "text": "Kilonewton-meters (kNm)",
+              "value": "forcekNm"
+            },
+            {
+              "click": "menuItemSelected(17,2)",
+              "text": "Newtons (N)",
+              "value": "forceN"
+            },
+            {
+              "click": "menuItemSelected(17,3)",
+              "text": "Kilonewtons (kN)",
+              "value": "forcekN"
+            }
+          ],
+          "text": "force"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(18,0)",
+              "text": "Gallons/min (gpm)",
+              "value": "flowgpm"
+            },
+            {
+              "click": "menuItemSelected(18,1)",
+              "text": "Cubic meters/sec (cms)",
+              "value": "flowcms"
+            },
+            {
+              "click": "menuItemSelected(18,2)",
+              "text": "Cubic feet/sec (cfs)",
+              "value": "flowcfs"
+            },
+            {
+              "click": "menuItemSelected(18,3)",
+              "text": "Cubic feet/min (cfm)",
+              "value": "flowcfm"
+            },
+            {
+              "click": "menuItemSelected(18,4)",
+              "text": "Litre/hour",
+              "value": "litreh"
+            },
+            {
+              "click": "menuItemSelected(18,5)",
+              "text": "Litre/min (l/min)",
+              "value": "flowlpm"
+            },
+            {
+              "click": "menuItemSelected(18,6)",
+              "text": "milliLitre/min (mL/min)",
+              "value": "flowmlpm"
+            }
+          ],
+          "text": "flow"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(19,0)",
+              "text": "Degrees (°)",
+              "value": "degree"
+            },
+            {
+              "click": "menuItemSelected(19,1)",
+              "text": "Radians",
+              "value": "radian"
+            },
+            {
+              "click": "menuItemSelected(19,2)",
+              "text": "Gradian",
+              "value": "grad"
+            }
+          ],
+          "text": "angle"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(20,0)",
+              "text": "Meters/sec²",
+              "value": "accMS2"
+            },
+            {
+              "click": "menuItemSelected(20,1)",
+              "text": "Feet/sec²",
+              "value": "accFS2"
+            },
+            {
+              "click": "menuItemSelected(20,2)",
+              "text": "G unit",
+              "value": "accG"
+            }
+          ],
+          "text": "acceleration"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(21,0)",
+              "text": "Becquerel (Bq)",
+              "value": "radbq"
+            },
+            {
+              "click": "menuItemSelected(21,1)",
+              "text": "curie (Ci)",
+              "value": "radci"
+            },
+            {
+              "click": "menuItemSelected(21,2)",
+              "text": "Gray (Gy)",
+              "value": "radgy"
+            },
+            {
+              "click": "menuItemSelected(21,3)",
+              "text": "rad",
+              "value": "radrad"
+            },
+            {
+              "click": "menuItemSelected(21,4)",
+              "text": "Sievert (Sv)",
+              "value": "radsv"
+            },
+            {
+              "click": "menuItemSelected(21,5)",
+              "text": "rem",
+              "value": "radrem"
+            },
+            {
+              "click": "menuItemSelected(21,6)",
+              "text": "Exposure (C/kg)",
+              "value": "radexpckg"
+            },
+            {
+              "click": "menuItemSelected(21,7)",
+              "text": "roentgen (R)",
+              "value": "radr"
+            },
+            {
+              "click": "menuItemSelected(21,8)",
+              "text": "Sievert/hour (Sv/h)",
+              "value": "radsvh"
+            }
+          ],
+          "text": "radiation"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(22,0)",
+              "text": "parts-per-million (ppm)",
+              "value": "ppm"
+            },
+            {
+              "click": "menuItemSelected(22,1)",
+              "text": "parts-per-billion (ppb)",
+              "value": "conppb"
+            },
+            {
+              "click": "menuItemSelected(22,2)",
+              "text": "nanogram per cubic metre (ng/m³)",
+              "value": "conngm3"
+            },
+            {
+              "click": "menuItemSelected(22,3)",
+              "text": "nanogram per normal cubic metre (ng/Nm³)",
+              "value": "conngNm3"
+            },
+            {
+              "click": "menuItemSelected(22,4)",
+              "text": "microgram per cubic metre (μg/m³)",
+              "value": "conμgm3"
+            },
+            {
+              "click": "menuItemSelected(22,5)",
+              "text": "microgram per normal cubic metre (μg/Nm³)",
+              "value": "conμgNm3"
+            },
+            {
+              "click": "menuItemSelected(22,6)",
+              "text": "milligram per cubic metre (mg/m³)",
+              "value": "conmgm3"
+            },
+            {
+              "click": "menuItemSelected(22,7)",
+              "text": "milligram per normal cubic metre (mg/Nm³)",
+              "value": "conmgNm3"
+            },
+            {
+              "click": "menuItemSelected(22,8)",
+              "text": "gram per cubic metre (g/m³)",
+              "value": "congm3"
+            },
+            {
+              "click": "menuItemSelected(22,9)",
+              "text": "gram per normal cubic metre (g/Nm³)",
+              "value": "congNm3"
+            }
+          ],
+          "text": "concentration"
+        }
+      ],
       "valueMaps": [
         {
           "op": "=",
           "text": "N/A",
           "value": "null"
         }
-      ],
-      "valueName": "current"
+      ]
     },
     {
       "cacheTimeout": null,
@@ -1027,7 +1978,7 @@
         "#cca300",
         "#508642"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "decbytes",
       "gauge": {
@@ -1040,7 +1991,7 @@
       "gridPos": {
         "h": 2,
         "w": 2,
-        "x": 2,
+        "x": 3,
         "y": 12
       },
       "id": 51,
@@ -1140,10 +2091,10 @@
         }
       ],
       "thresholds": "2,10",
-      "title": "Ceph Cluster Total",
+      "title": "Cluster Total",
       "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
           "op": "=",
@@ -1154,35 +2105,125 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorPostfix": true,
-      "colorPrefix": true,
-      "colorValue": true,
       "colors": [
-        "#508642",
-        "#cca300",
-        "#bf1b00"
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "${DS_INFLUXDB}",
-      "decimals": 1,
-      "description": "",
+      "decimals": 2,
+      "fontSizes": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        46,
+        48,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70
+      ],
+      "fontTypes": [
+        "Arial",
+        "Avant Garde",
+        "Bookman",
+        "Consolas",
+        "Courier",
+        "Courier New",
+        "Garamond",
+        "Helvetica",
+        "Open Sans",
+        "Palatino",
+        "Times",
+        "Times New Roman",
+        "Verdana"
+      ],
       "format": "percent",
       "gauge": {
+        "animateNeedleValueTransition": true,
+        "animateNeedleValueTransitionSpeed": 100,
+        "edgeWidth": 0.1,
+        "gaugeRadius": 80,
+        "gaugeUnits": "",
+        "innerCol": "rgb(255, 255, 255)",
+        "labelFontSize": 20,
+        "maxNeedleAngle": 320,
+        "maxTickAngle": 300,
         "maxValue": 100,
         "minValue": 0,
-        "show": true,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
+        "needleCol": "rgb(213, 60, 0)",
+        "needleLengthNeg": 0.2,
+        "needleTickGap": 0,
+        "needleWidth": 5,
+        "outerEdgeCol": "rgb(25, 25, 25)",
+        "padding": 0.05,
+        "pivotCol": "#0a437c",
+        "pivotRadius": 0.1,
+        "showLowerThresholdRange": true,
+        "showMiddleThresholdRange": true,
+        "showThresholdColorOnBackground": false,
+        "showThresholdColorOnValue": false,
+        "showThresholdOnGauge": true,
+        "showUpperThresholdRange": true,
+        "tickColMaj": "#1f78c1",
+        "tickColMin": "rgb(0, 0, 0)",
+        "tickEdgeGap": 0.05,
+        "tickFont": "Consolas",
+        "tickLabelCol": "#0a437c",
+        "tickLengthMaj": 0.1,
+        "tickLengthMin": 0.05,
+        "tickSpaceMajVal": 10,
+        "tickSpaceMinVal": 1,
+        "tickWidthMaj": 5,
+        "tickWidthMin": 1,
+        "ticknessGaugeBasis": 200,
+        "unitsFont": "Consolas",
+        "unitsLabelCol": "#052b51",
+        "unitsLabelFontSize": 40,
+        "valueYOffset": 0,
+        "zeroNeedleAngle": 40,
+        "zeroTickAngle": 60
       },
+      "gaugeDivId": "d3gauge_svg_73",
       "gridPos": {
         "h": 6,
-        "w": 2,
-        "x": 4,
+        "w": 3,
+        "x": 5,
         "y": 12
       },
-      "id": 29,
-      "interval": null,
+      "id": 73,
       "links": [],
       "mappingType": 1,
       "mappingTypes": [
@@ -1195,13 +2236,15 @@
           "value": 2
         }
       ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
+      "operatorName": "avg",
+      "operatorNameOptions": [
+        "min",
+        "max",
+        "avg",
+        "current",
+        "total",
+        "name"
+      ],
       "rangeMaps": [
         {
           "from": "null",
@@ -1209,33 +2252,15 @@
           "to": "null"
         }
       ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
+      "svgContainer": {},
       "targets": [
         {
-          "alias": "$tag_device",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
+          "groupBy": [],
+          "hide": false,
+          "measurement": "disk",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT 100 - (last(\"free\") /  last(\"total\")) * 100 AS \"% used\" FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.127:/') AND $timeFilter GROUP BY time(10s), \"device\" fill(null)",
+          "query": "SELECT   (1-(last(\"free\") / last(\"total\")))*100 FROM \"disk\" WHERE (\"device\" = '192.168.1.128:6789,192.168.1.129:6789:/')",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1243,32 +2268,983 @@
             [
               {
                 "params": [
-                  "value"
+                  "total"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "last"
               }
             ]
           ],
-          "tags": []
+          "tags": [
+            {
+              "key": "device",
+              "operator": "=",
+              "value": "192.168.1.128:6789,192.168.1.129:6789:/"
+            }
+          ]
         }
       ],
-      "thresholds": "50,80",
-      "title": "Ceph Media Pool Utilization",
-      "transparent": false,
-      "type": "singlestat",
-      "valueFontSize": "70%",
+      "thresholds": "60,80",
+      "tickMaps": [],
+      "title": "Media Pool Utilization",
+      "type": "briangann-gauge-panel",
+      "unitFormats": [
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(0,0)",
+              "text": "none",
+              "value": "none"
+            },
+            {
+              "click": "menuItemSelected(0,1)",
+              "text": "short",
+              "value": "short"
+            },
+            {
+              "click": "menuItemSelected(0,2)",
+              "text": "percent (0-100)",
+              "value": "percent"
+            },
+            {
+              "click": "menuItemSelected(0,3)",
+              "text": "percent (0.0-1.0)",
+              "value": "percentunit"
+            },
+            {
+              "click": "menuItemSelected(0,4)",
+              "text": "Humidity (%H)",
+              "value": "humidity"
+            },
+            {
+              "click": "menuItemSelected(0,5)",
+              "text": "decibel",
+              "value": "dB"
+            },
+            {
+              "click": "menuItemSelected(0,6)",
+              "text": "hexadecimal (0x)",
+              "value": "hex0x"
+            },
+            {
+              "click": "menuItemSelected(0,7)",
+              "text": "hexadecimal",
+              "value": "hex"
+            },
+            {
+              "click": "menuItemSelected(0,8)",
+              "text": "scientific notation",
+              "value": "sci"
+            },
+            {
+              "click": "menuItemSelected(0,9)",
+              "text": "locale format",
+              "value": "locale"
+            }
+          ],
+          "text": "none"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(1,0)",
+              "text": "Dollars ($)",
+              "value": "currencyUSD"
+            },
+            {
+              "click": "menuItemSelected(1,1)",
+              "text": "Pounds (£)",
+              "value": "currencyGBP"
+            },
+            {
+              "click": "menuItemSelected(1,2)",
+              "text": "Euro (€)",
+              "value": "currencyEUR"
+            },
+            {
+              "click": "menuItemSelected(1,3)",
+              "text": "Yen (¥)",
+              "value": "currencyJPY"
+            },
+            {
+              "click": "menuItemSelected(1,4)",
+              "text": "Rubles (₽)",
+              "value": "currencyRUB"
+            },
+            {
+              "click": "menuItemSelected(1,5)",
+              "text": "Hryvnias (₴)",
+              "value": "currencyUAH"
+            },
+            {
+              "click": "menuItemSelected(1,6)",
+              "text": "Real (R$)",
+              "value": "currencyBRL"
+            },
+            {
+              "click": "menuItemSelected(1,7)",
+              "text": "Danish Krone (kr)",
+              "value": "currencyDKK"
+            },
+            {
+              "click": "menuItemSelected(1,8)",
+              "text": "Icelandic Króna (kr)",
+              "value": "currencyISK"
+            },
+            {
+              "click": "menuItemSelected(1,9)",
+              "text": "Norwegian Krone (kr)",
+              "value": "currencyNOK"
+            },
+            {
+              "click": "menuItemSelected(1,10)",
+              "text": "Swedish Krona (kr)",
+              "value": "currencySEK"
+            },
+            {
+              "click": "menuItemSelected(1,11)",
+              "text": "Czech koruna (czk)",
+              "value": "currencyCZK"
+            },
+            {
+              "click": "menuItemSelected(1,12)",
+              "text": "Swiss franc (CHF)",
+              "value": "currencyCHF"
+            },
+            {
+              "click": "menuItemSelected(1,13)",
+              "text": "Polish Złoty (PLN)",
+              "value": "currencyPLN"
+            },
+            {
+              "click": "menuItemSelected(1,14)",
+              "text": "Bitcoin (฿)",
+              "value": "currencyBTC"
+            }
+          ],
+          "text": "currency"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(2,0)",
+              "text": "Hertz (1/s)",
+              "value": "hertz"
+            },
+            {
+              "click": "menuItemSelected(2,1)",
+              "text": "nanoseconds (ns)",
+              "value": "ns"
+            },
+            {
+              "click": "menuItemSelected(2,2)",
+              "text": "microseconds (µs)",
+              "value": "µs"
+            },
+            {
+              "click": "menuItemSelected(2,3)",
+              "text": "milliseconds (ms)",
+              "value": "ms"
+            },
+            {
+              "click": "menuItemSelected(2,4)",
+              "text": "seconds (s)",
+              "value": "s"
+            },
+            {
+              "click": "menuItemSelected(2,5)",
+              "text": "minutes (m)",
+              "value": "m"
+            },
+            {
+              "click": "menuItemSelected(2,6)",
+              "text": "hours (h)",
+              "value": "h"
+            },
+            {
+              "click": "menuItemSelected(2,7)",
+              "text": "days (d)",
+              "value": "d"
+            },
+            {
+              "click": "menuItemSelected(2,8)",
+              "text": "duration (ms)",
+              "value": "dtdurationms"
+            },
+            {
+              "click": "menuItemSelected(2,9)",
+              "text": "duration (s)",
+              "value": "dtdurations"
+            },
+            {
+              "click": "menuItemSelected(2,10)",
+              "text": "duration (hh:mm:ss)",
+              "value": "dthms"
+            },
+            {
+              "click": "menuItemSelected(2,11)",
+              "text": "Timeticks (s/100)",
+              "value": "timeticks"
+            },
+            {
+              "click": "menuItemSelected(2,12)",
+              "text": "clock (ms)",
+              "value": "clockms"
+            },
+            {
+              "click": "menuItemSelected(2,13)",
+              "text": "clock (s)",
+              "value": "clocks"
+            }
+          ],
+          "text": "time"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(3,0)",
+              "text": "YYYY-MM-DD HH:mm:ss",
+              "value": "dateTimeAsIso"
+            },
+            {
+              "click": "menuItemSelected(3,1)",
+              "text": "DD/MM/YYYY h:mm:ss a",
+              "value": "dateTimeAsUS"
+            },
+            {
+              "click": "menuItemSelected(3,2)",
+              "text": "From Now",
+              "value": "dateTimeFromNow"
+            }
+          ],
+          "text": "date & time"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(4,0)",
+              "text": "bits",
+              "value": "bits"
+            },
+            {
+              "click": "menuItemSelected(4,1)",
+              "text": "bytes",
+              "value": "bytes"
+            },
+            {
+              "click": "menuItemSelected(4,2)",
+              "text": "kibibytes",
+              "value": "kbytes"
+            },
+            {
+              "click": "menuItemSelected(4,3)",
+              "text": "mebibytes",
+              "value": "mbytes"
+            },
+            {
+              "click": "menuItemSelected(4,4)",
+              "text": "gibibytes",
+              "value": "gbytes"
+            }
+          ],
+          "text": "data (IEC)"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(5,0)",
+              "text": "bits",
+              "value": "decbits"
+            },
+            {
+              "click": "menuItemSelected(5,1)",
+              "text": "bytes",
+              "value": "decbytes"
+            },
+            {
+              "click": "menuItemSelected(5,2)",
+              "text": "kilobytes",
+              "value": "deckbytes"
+            },
+            {
+              "click": "menuItemSelected(5,3)",
+              "text": "megabytes",
+              "value": "decmbytes"
+            },
+            {
+              "click": "menuItemSelected(5,4)",
+              "text": "gigabytes",
+              "value": "decgbytes"
+            }
+          ],
+          "text": "data (Metric)"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(6,0)",
+              "text": "packets/sec",
+              "value": "pps"
+            },
+            {
+              "click": "menuItemSelected(6,1)",
+              "text": "bits/sec",
+              "value": "bps"
+            },
+            {
+              "click": "menuItemSelected(6,2)",
+              "text": "bytes/sec",
+              "value": "Bps"
+            },
+            {
+              "click": "menuItemSelected(6,3)",
+              "text": "kilobits/sec",
+              "value": "Kbits"
+            },
+            {
+              "click": "menuItemSelected(6,4)",
+              "text": "kilobytes/sec",
+              "value": "KBs"
+            },
+            {
+              "click": "menuItemSelected(6,5)",
+              "text": "megabits/sec",
+              "value": "Mbits"
+            },
+            {
+              "click": "menuItemSelected(6,6)",
+              "text": "megabytes/sec",
+              "value": "MBs"
+            },
+            {
+              "click": "menuItemSelected(6,7)",
+              "text": "gigabytes/sec",
+              "value": "GBs"
+            },
+            {
+              "click": "menuItemSelected(6,8)",
+              "text": "gigabits/sec",
+              "value": "Gbits"
+            }
+          ],
+          "text": "data rate"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(7,0)",
+              "text": "hashes/sec",
+              "value": "Hs"
+            },
+            {
+              "click": "menuItemSelected(7,1)",
+              "text": "kilohashes/sec",
+              "value": "KHs"
+            },
+            {
+              "click": "menuItemSelected(7,2)",
+              "text": "megahashes/sec",
+              "value": "MHs"
+            },
+            {
+              "click": "menuItemSelected(7,3)",
+              "text": "gigahashes/sec",
+              "value": "GHs"
+            },
+            {
+              "click": "menuItemSelected(7,4)",
+              "text": "terahashes/sec",
+              "value": "THs"
+            },
+            {
+              "click": "menuItemSelected(7,5)",
+              "text": "petahashes/sec",
+              "value": "PHs"
+            },
+            {
+              "click": "menuItemSelected(7,6)",
+              "text": "exahashes/sec",
+              "value": "EHs"
+            }
+          ],
+          "text": "hash rate"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(8,0)",
+              "text": "ops/sec (ops)",
+              "value": "ops"
+            },
+            {
+              "click": "menuItemSelected(8,1)",
+              "text": "requests/sec (rps)",
+              "value": "reqps"
+            },
+            {
+              "click": "menuItemSelected(8,2)",
+              "text": "reads/sec (rps)",
+              "value": "rps"
+            },
+            {
+              "click": "menuItemSelected(8,3)",
+              "text": "writes/sec (wps)",
+              "value": "wps"
+            },
+            {
+              "click": "menuItemSelected(8,4)",
+              "text": "I/O ops/sec (iops)",
+              "value": "iops"
+            },
+            {
+              "click": "menuItemSelected(8,5)",
+              "text": "ops/min (opm)",
+              "value": "opm"
+            },
+            {
+              "click": "menuItemSelected(8,6)",
+              "text": "reads/min (rpm)",
+              "value": "rpm"
+            },
+            {
+              "click": "menuItemSelected(8,7)",
+              "text": "writes/min (wpm)",
+              "value": "wpm"
+            }
+          ],
+          "text": "throughput"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(9,0)",
+              "text": "millimetre (mm)",
+              "value": "lengthmm"
+            },
+            {
+              "click": "menuItemSelected(9,1)",
+              "text": "meter (m)",
+              "value": "lengthm"
+            },
+            {
+              "click": "menuItemSelected(9,2)",
+              "text": "feet (ft)",
+              "value": "lengthft"
+            },
+            {
+              "click": "menuItemSelected(9,3)",
+              "text": "kilometer (km)",
+              "value": "lengthkm"
+            },
+            {
+              "click": "menuItemSelected(9,4)",
+              "text": "mile (mi)",
+              "value": "lengthmi"
+            }
+          ],
+          "text": "length"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(10,0)",
+              "text": "Square Meters (m²)",
+              "value": "areaM2"
+            },
+            {
+              "click": "menuItemSelected(10,1)",
+              "text": "Square Feet (ft²)",
+              "value": "areaF2"
+            },
+            {
+              "click": "menuItemSelected(10,2)",
+              "text": "Square Miles (mi²)",
+              "value": "areaMI2"
+            }
+          ],
+          "text": "area"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(11,0)",
+              "text": "milligram (mg)",
+              "value": "massmg"
+            },
+            {
+              "click": "menuItemSelected(11,1)",
+              "text": "gram (g)",
+              "value": "massg"
+            },
+            {
+              "click": "menuItemSelected(11,2)",
+              "text": "kilogram (kg)",
+              "value": "masskg"
+            },
+            {
+              "click": "menuItemSelected(11,3)",
+              "text": "metric ton (t)",
+              "value": "masst"
+            }
+          ],
+          "text": "mass"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(12,0)",
+              "text": "metres/second (m/s)",
+              "value": "velocityms"
+            },
+            {
+              "click": "menuItemSelected(12,1)",
+              "text": "kilometers/hour (km/h)",
+              "value": "velocitykmh"
+            },
+            {
+              "click": "menuItemSelected(12,2)",
+              "text": "miles/hour (mph)",
+              "value": "velocitymph"
+            },
+            {
+              "click": "menuItemSelected(12,3)",
+              "text": "knot (kn)",
+              "value": "velocityknot"
+            }
+          ],
+          "text": "velocity"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(13,0)",
+              "text": "millilitre (mL)",
+              "value": "mlitre"
+            },
+            {
+              "click": "menuItemSelected(13,1)",
+              "text": "litre (L)",
+              "value": "litre"
+            },
+            {
+              "click": "menuItemSelected(13,2)",
+              "text": "cubic metre",
+              "value": "m3"
+            },
+            {
+              "click": "menuItemSelected(13,3)",
+              "text": "Normal cubic metre",
+              "value": "Nm3"
+            },
+            {
+              "click": "menuItemSelected(13,4)",
+              "text": "cubic decimetre",
+              "value": "dm3"
+            },
+            {
+              "click": "menuItemSelected(13,5)",
+              "text": "gallons",
+              "value": "gallons"
+            }
+          ],
+          "text": "volume"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(14,0)",
+              "text": "Watt (W)",
+              "value": "watt"
+            },
+            {
+              "click": "menuItemSelected(14,1)",
+              "text": "Kilowatt (kW)",
+              "value": "kwatt"
+            },
+            {
+              "click": "menuItemSelected(14,2)",
+              "text": "Milliwatt (mW)",
+              "value": "mwatt"
+            },
+            {
+              "click": "menuItemSelected(14,3)",
+              "text": "Watt per square metre (W/m²)",
+              "value": "Wm2"
+            },
+            {
+              "click": "menuItemSelected(14,4)",
+              "text": "Volt-ampere (VA)",
+              "value": "voltamp"
+            },
+            {
+              "click": "menuItemSelected(14,5)",
+              "text": "Kilovolt-ampere (kVA)",
+              "value": "kvoltamp"
+            },
+            {
+              "click": "menuItemSelected(14,6)",
+              "text": "Volt-ampere reactive (var)",
+              "value": "voltampreact"
+            },
+            {
+              "click": "menuItemSelected(14,7)",
+              "text": "Kilovolt-ampere reactive (kvar)",
+              "value": "kvoltampreact"
+            },
+            {
+              "click": "menuItemSelected(14,8)",
+              "text": "Watt-hour (Wh)",
+              "value": "watth"
+            },
+            {
+              "click": "menuItemSelected(14,9)",
+              "text": "Kilowatt-hour (kWh)",
+              "value": "kwatth"
+            },
+            {
+              "click": "menuItemSelected(14,10)",
+              "text": "Kilowatt-min (kWm)",
+              "value": "kwattm"
+            },
+            {
+              "click": "menuItemSelected(14,11)",
+              "text": "Joule (J)",
+              "value": "joule"
+            },
+            {
+              "click": "menuItemSelected(14,12)",
+              "text": "Electron volt (eV)",
+              "value": "ev"
+            },
+            {
+              "click": "menuItemSelected(14,13)",
+              "text": "Ampere (A)",
+              "value": "amp"
+            },
+            {
+              "click": "menuItemSelected(14,14)",
+              "text": "Kiloampere (kA)",
+              "value": "kamp"
+            },
+            {
+              "click": "menuItemSelected(14,15)",
+              "text": "Milliampere (mA)",
+              "value": "mamp"
+            },
+            {
+              "click": "menuItemSelected(14,16)",
+              "text": "Volt (V)",
+              "value": "volt"
+            },
+            {
+              "click": "menuItemSelected(14,17)",
+              "text": "Kilovolt (kV)",
+              "value": "kvolt"
+            },
+            {
+              "click": "menuItemSelected(14,18)",
+              "text": "Millivolt (mV)",
+              "value": "mvolt"
+            },
+            {
+              "click": "menuItemSelected(14,19)",
+              "text": "Decibel-milliwatt (dBm)",
+              "value": "dBm"
+            },
+            {
+              "click": "menuItemSelected(14,20)",
+              "text": "Ohm (Ω)",
+              "value": "ohm"
+            },
+            {
+              "click": "menuItemSelected(14,21)",
+              "text": "Lumens (Lm)",
+              "value": "lumens"
+            }
+          ],
+          "text": "energy"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(15,0)",
+              "text": "Celsius (°C)",
+              "value": "celsius"
+            },
+            {
+              "click": "menuItemSelected(15,1)",
+              "text": "Farenheit (°F)",
+              "value": "farenheit"
+            },
+            {
+              "click": "menuItemSelected(15,2)",
+              "text": "Kelvin (K)",
+              "value": "kelvin"
+            }
+          ],
+          "text": "temperature"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(16,0)",
+              "text": "Millibars",
+              "value": "pressurembar"
+            },
+            {
+              "click": "menuItemSelected(16,1)",
+              "text": "Bars",
+              "value": "pressurebar"
+            },
+            {
+              "click": "menuItemSelected(16,2)",
+              "text": "Kilobars",
+              "value": "pressurekbar"
+            },
+            {
+              "click": "menuItemSelected(16,3)",
+              "text": "Hectopascals",
+              "value": "pressurehpa"
+            },
+            {
+              "click": "menuItemSelected(16,4)",
+              "text": "Kilopascals",
+              "value": "pressurekpa"
+            },
+            {
+              "click": "menuItemSelected(16,5)",
+              "text": "Inches of mercury",
+              "value": "pressurehg"
+            },
+            {
+              "click": "menuItemSelected(16,6)",
+              "text": "PSI",
+              "value": "pressurepsi"
+            }
+          ],
+          "text": "pressure"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(17,0)",
+              "text": "Newton-meters (Nm)",
+              "value": "forceNm"
+            },
+            {
+              "click": "menuItemSelected(17,1)",
+              "text": "Kilonewton-meters (kNm)",
+              "value": "forcekNm"
+            },
+            {
+              "click": "menuItemSelected(17,2)",
+              "text": "Newtons (N)",
+              "value": "forceN"
+            },
+            {
+              "click": "menuItemSelected(17,3)",
+              "text": "Kilonewtons (kN)",
+              "value": "forcekN"
+            }
+          ],
+          "text": "force"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(18,0)",
+              "text": "Gallons/min (gpm)",
+              "value": "flowgpm"
+            },
+            {
+              "click": "menuItemSelected(18,1)",
+              "text": "Cubic meters/sec (cms)",
+              "value": "flowcms"
+            },
+            {
+              "click": "menuItemSelected(18,2)",
+              "text": "Cubic feet/sec (cfs)",
+              "value": "flowcfs"
+            },
+            {
+              "click": "menuItemSelected(18,3)",
+              "text": "Cubic feet/min (cfm)",
+              "value": "flowcfm"
+            },
+            {
+              "click": "menuItemSelected(18,4)",
+              "text": "Litre/hour",
+              "value": "litreh"
+            },
+            {
+              "click": "menuItemSelected(18,5)",
+              "text": "Litre/min (l/min)",
+              "value": "flowlpm"
+            },
+            {
+              "click": "menuItemSelected(18,6)",
+              "text": "milliLitre/min (mL/min)",
+              "value": "flowmlpm"
+            }
+          ],
+          "text": "flow"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(19,0)",
+              "text": "Degrees (°)",
+              "value": "degree"
+            },
+            {
+              "click": "menuItemSelected(19,1)",
+              "text": "Radians",
+              "value": "radian"
+            },
+            {
+              "click": "menuItemSelected(19,2)",
+              "text": "Gradian",
+              "value": "grad"
+            }
+          ],
+          "text": "angle"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(20,0)",
+              "text": "Meters/sec²",
+              "value": "accMS2"
+            },
+            {
+              "click": "menuItemSelected(20,1)",
+              "text": "Feet/sec²",
+              "value": "accFS2"
+            },
+            {
+              "click": "menuItemSelected(20,2)",
+              "text": "G unit",
+              "value": "accG"
+            }
+          ],
+          "text": "acceleration"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(21,0)",
+              "text": "Becquerel (Bq)",
+              "value": "radbq"
+            },
+            {
+              "click": "menuItemSelected(21,1)",
+              "text": "curie (Ci)",
+              "value": "radci"
+            },
+            {
+              "click": "menuItemSelected(21,2)",
+              "text": "Gray (Gy)",
+              "value": "radgy"
+            },
+            {
+              "click": "menuItemSelected(21,3)",
+              "text": "rad",
+              "value": "radrad"
+            },
+            {
+              "click": "menuItemSelected(21,4)",
+              "text": "Sievert (Sv)",
+              "value": "radsv"
+            },
+            {
+              "click": "menuItemSelected(21,5)",
+              "text": "rem",
+              "value": "radrem"
+            },
+            {
+              "click": "menuItemSelected(21,6)",
+              "text": "Exposure (C/kg)",
+              "value": "radexpckg"
+            },
+            {
+              "click": "menuItemSelected(21,7)",
+              "text": "roentgen (R)",
+              "value": "radr"
+            },
+            {
+              "click": "menuItemSelected(21,8)",
+              "text": "Sievert/hour (Sv/h)",
+              "value": "radsvh"
+            }
+          ],
+          "text": "radiation"
+        },
+        {
+          "submenu": [
+            {
+              "click": "menuItemSelected(22,0)",
+              "text": "parts-per-million (ppm)",
+              "value": "ppm"
+            },
+            {
+              "click": "menuItemSelected(22,1)",
+              "text": "parts-per-billion (ppb)",
+              "value": "conppb"
+            },
+            {
+              "click": "menuItemSelected(22,2)",
+              "text": "nanogram per cubic metre (ng/m³)",
+              "value": "conngm3"
+            },
+            {
+              "click": "menuItemSelected(22,3)",
+              "text": "nanogram per normal cubic metre (ng/Nm³)",
+              "value": "conngNm3"
+            },
+            {
+              "click": "menuItemSelected(22,4)",
+              "text": "microgram per cubic metre (μg/m³)",
+              "value": "conμgm3"
+            },
+            {
+              "click": "menuItemSelected(22,5)",
+              "text": "microgram per normal cubic metre (μg/Nm³)",
+              "value": "conμgNm3"
+            },
+            {
+              "click": "menuItemSelected(22,6)",
+              "text": "milligram per cubic metre (mg/m³)",
+              "value": "conmgm3"
+            },
+            {
+              "click": "menuItemSelected(22,7)",
+              "text": "milligram per normal cubic metre (mg/Nm³)",
+              "value": "conmgNm3"
+            },
+            {
+              "click": "menuItemSelected(22,8)",
+              "text": "gram per cubic metre (g/m³)",
+              "value": "congm3"
+            },
+            {
+              "click": "menuItemSelected(22,9)",
+              "text": "gram per normal cubic metre (g/Nm³)",
+              "value": "congNm3"
+            }
+          ],
+          "text": "concentration"
+        }
+      ],
       "valueMaps": [
         {
           "op": "=",
           "text": "N/A",
           "value": "null"
         }
-      ],
-      "valueName": "current"
+      ]
     },
     {
       "cacheTimeout": null,
@@ -1281,7 +3257,7 @@
         "#cca300",
         "#508642"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "decbytes",
       "gauge": {
@@ -1293,8 +3269,8 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 2,
-        "x": 6,
+        "w": 3,
+        "x": 8,
         "y": 12
       },
       "id": 30,
@@ -1340,8 +3316,8 @@
           "measurement": "disk",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"free\") AS \"free\" FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.127:/') AND $timeFilter GROUP BY time(10s), \"device\" fill(null)",
-          "rawQuery": false,
+          "query": "SELECT \"total\" FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.128:6789,192.168.1.129:6789:/')",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1364,7 +3340,7 @@
               "condition": "AND",
               "key": "device",
               "operator": "=",
-              "value": "192.168.1.127:/"
+              "value": "192.168.1.128:6789,192.168.1.129:6789:/"
             }
           ]
         },
@@ -1394,10 +3370,10 @@
         }
       ],
       "thresholds": "2,10",
-      "title": "Ceph Media Pool Total",
+      "title": "Media Pool Total",
       "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
           "op": "=",
@@ -1416,8 +3392,8 @@
         "rgba(244, 126, 30, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "${DS_INFLUXDB}",
-      "decimals": 1,
+      "datasource": "influx-telegraf",
+      "decimals": 2,
       "format": "short",
       "gauge": {
         "maxValue": 8,
@@ -1429,7 +3405,7 @@
       "gridPos": {
         "h": 6,
         "w": 3,
-        "x": 8,
+        "x": 11,
         "y": 12
       },
       "id": 38,
@@ -1516,8 +3492,9 @@
       ],
       "thresholds": "4,6",
       "title": "Load Avg 1m",
+      "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "120%",
+      "valueFontSize": "100%",
       "valueMaps": [
         {
           "op": "=",
@@ -1536,8 +3513,8 @@
         "rgba(244, 126, 30, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "${DS_INFLUXDB}",
-      "decimals": 1,
+      "datasource": "influx-telegraf",
+      "decimals": 2,
       "format": "short",
       "gauge": {
         "maxValue": 8,
@@ -1547,9 +3524,9 @@
         "thresholdMarkers": true
       },
       "gridPos": {
-        "h": 6,
+        "h": 3,
         "w": 3,
-        "x": 11,
+        "x": 14,
         "y": 12
       },
       "id": 42,
@@ -1631,121 +3608,7 @@
       "thresholds": "4,6",
       "title": "Load Avg 5m",
       "type": "singlestat",
-      "valueFontSize": "120%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": true,
-      "colors": [
-        "rgba(50, 172, 45, 0.97)",
-        "rgba(244, 126, 30, 0.89)",
-        "rgba(245, 54, 54, 0.9)"
-      ],
-      "datasource": "${DS_INFLUXDB}",
-      "decimals": 1,
-      "format": "short",
-      "gauge": {
-        "maxValue": 8,
-        "minValue": 0,
-        "show": true,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 3,
-        "x": 14,
-        "y": 12
-      },
-      "id": 40,
-      "interval": "10s",
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": true
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "system",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT last(\"load15\") FROM \"system\" WHERE \"host\" =~ /^$host$/",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "load15"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=",
-              "value": "shockwave"
-            }
-          ]
-        }
-      ],
-      "thresholds": "4,6",
-      "title": "Load Avg 15m",
-      "type": "singlestat",
-      "valueFontSize": "120%",
+      "valueFontSize": "100%",
       "valueMaps": [
         {
           "op": "=",
@@ -1764,8 +3627,8 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
-      "decimals": 1,
+      "datasource": "influx-telegraf",
+      "decimals": 2,
       "format": "percent",
       "gauge": {
         "maxValue": 100,
@@ -1955,7 +3818,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "KBs",
       "gauge": {
@@ -2003,7 +3866,7 @@
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": true,
         "lineColor": "rgb(31, 120, 193)",
-        "show": true
+        "show": false
       },
       "tableColumn": "",
       "targets": [
@@ -2065,7 +3928,7 @@
       "thresholds": "100000,500000",
       "title": "Upload",
       "type": "singlestat",
-      "valueFontSize": "120%",
+      "valueFontSize": "100%",
       "valueMaps": [
         {
           "op": "=",
@@ -2086,7 +3949,7 @@
         "#cca300",
         "#508642"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "decbytes",
       "gauge": {
@@ -2099,7 +3962,7 @@
       "gridPos": {
         "h": 2,
         "w": 2,
-        "x": 2,
+        "x": 3,
         "y": 14
       },
       "id": 52,
@@ -2221,10 +4084,10 @@
         }
       ],
       "thresholds": "2,10",
-      "title": "Ceph Cluster Util",
+      "title": "Cluster Used",
       "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
           "op": "=",
@@ -2245,7 +4108,7 @@
         "#cca300",
         "#508642"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "decbytes",
       "gauge": {
@@ -2257,8 +4120,8 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 2,
-        "x": 6,
+        "w": 3,
+        "x": 8,
         "y": 14
       },
       "id": 49,
@@ -2304,7 +4167,7 @@
           "measurement": "disk",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"total\") - last(\"free\") AS \"Used\" FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.127:/') AND $timeFilter",
+          "query": "SELECT last(\"total\") - last(\"free\") FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.128:6789,192.168.1.129:6789:/')",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -2312,7 +4175,7 @@
             [
               {
                 "params": [
-                  "total"
+                  "used"
                 ],
                 "type": "field"
               },
@@ -2380,10 +4243,10 @@
         }
       ],
       "thresholds": "2,10",
-      "title": "Ceph Media Pool Util",
+      "title": "Media Pool Used",
       "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
           "op": "=",
@@ -2396,13 +4259,127 @@
     {
       "cacheTimeout": null,
       "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "rgba(50, 172, 45, 0.97)",
+        "rgba(244, 126, 30, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "datasource": "influx-telegraf",
+      "decimals": 2,
+      "format": "short",
+      "gauge": {
+        "maxValue": 8,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 14,
+        "y": 15
+      },
+      "id": 40,
+      "interval": "10s",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": true
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "system",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"load15\") FROM \"system\" WHERE \"host\" =~ /^$host$/",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "load15"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "shockwave"
+            }
+          ]
+        }
+      ],
+      "thresholds": "4,6",
+      "title": "Load Avg 15m",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
       "colorValue": false,
       "colors": [
         "#299c46",
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "KBs",
       "gauge": {
@@ -2450,7 +4427,7 @@
         "fillColor": "rgba(31, 118, 189, 0.18)",
         "full": true,
         "lineColor": "rgb(31, 120, 193)",
-        "show": true
+        "show": false
       },
       "tableColumn": "",
       "targets": [
@@ -2500,7 +4477,7 @@
       "thresholds": "100000,500000",
       "title": "Download",
       "type": "singlestat",
-      "valueFontSize": "120%",
+      "valueFontSize": "100%",
       "valueMaps": [
         {
           "op": "=",
@@ -2521,7 +4498,7 @@
         "#cca300",
         "#508642"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "decbytes",
       "gauge": {
@@ -2534,7 +4511,7 @@
       "gridPos": {
         "h": 2,
         "w": 2,
-        "x": 2,
+        "x": 3,
         "y": 16
       },
       "id": 53,
@@ -2638,10 +4615,10 @@
         }
       ],
       "thresholds": "2,10",
-      "title": "Ceph  Cluster Avail",
+      "title": "Cluster Free",
       "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
           "op": "=",
@@ -2662,7 +4639,7 @@
         "#cca300",
         "#508642"
       ],
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "decimals": 2,
       "format": "decbytes",
       "gauge": {
@@ -2674,8 +4651,8 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 2,
-        "x": 6,
+        "w": 3,
+        "x": 8,
         "y": 16
       },
       "id": 50,
@@ -2733,7 +4710,7 @@
           "hide": false,
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT last(\"free\") AS \"free\" FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.127:/') AND $timeFilter GROUP BY time(10s), \"device\" fill(null)",
+          "query": "SELECT last(\"free\") FROM \"disk\" WHERE (\"host\" = 'shockwave' AND \"device\" = '192.168.1.128:6789,192.168.1.129:6789:/')",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -2779,10 +4756,10 @@
         }
       ],
       "thresholds": "2,10",
-      "title": "Ceph Media Pool Avail",
+      "title": "Media Pool Free",
       "transparent": false,
       "type": "singlestat",
-      "valueFontSize": "80%",
+      "valueFontSize": "50%",
       "valueMaps": [
         {
           "op": "=",
@@ -2810,7 +4787,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "fill": 2,
       "gridPos": {
         "h": 9,
@@ -2827,7 +4804,7 @@
         "max": false,
         "min": false,
         "rightSide": false,
-        "show": true,
+        "show": false,
         "sideWidth": null,
         "total": false,
         "values": true
@@ -2904,6 +4881,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU Load",
       "tooltip": {
@@ -2983,7 +4961,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -3000,7 +4978,7 @@
         "max": true,
         "min": true,
         "rightSide": false,
-        "show": true,
+        "show": false,
         "sort": "current",
         "sortDesc": true,
         "total": false,
@@ -3130,6 +5108,7 @@
         }
       ],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Network throughput",
       "tooltip": {
@@ -3174,7 +5153,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "fill": 4,
       "gridPos": {
         "h": 8,
@@ -3191,7 +5170,7 @@
         "max": true,
         "min": true,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
         "values": true
       },
@@ -3379,6 +5358,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "CPU used",
       "tooltip": {
@@ -3423,7 +5403,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "fill": 0,
       "gridPos": {
         "h": 8,
@@ -3441,7 +5421,7 @@
         "max": false,
         "min": false,
         "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
         "values": true
       },
@@ -3486,7 +5466,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT 100 - last(\"usage_idle\") FROM \"cpu\" WHERE (\"host\" = 'shockwave') AND $timeFilter GROUP BY time(5s), \"cpu\" fill(null)",
+          "query": "SELECT 100 - last(\"usage_idle\") FROM \"cpu\" WHERE (\"host\" = 'shockwave') AND $timeFilter GROUP BY time(5s), \"cpu\" fill(none)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3509,6 +5489,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Per CPU Utilization",
       "tooltip": {
@@ -3554,7 +5535,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -3571,7 +5552,7 @@
         "max": true,
         "min": true,
         "rightSide": false,
-        "show": true,
+        "show": false,
         "sort": "current",
         "sortDesc": true,
         "total": false,
@@ -3691,6 +5672,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk IO/s",
       "tooltip": {
@@ -3735,7 +5717,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_INFLUXDB}",
+      "datasource": "influx-telegraf",
       "fill": 1,
       "gridPos": {
         "h": 7,
@@ -3752,7 +5734,7 @@
         "max": true,
         "min": true,
         "rightSide": false,
-        "show": true,
+        "show": false,
         "sort": "current",
         "sortDesc": true,
         "total": false,
@@ -4204,6 +6186,7 @@
       ],
       "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Disk throughput",
       "tooltip": {
@@ -4244,7 +6227,7 @@
       }
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -4252,708 +6235,2127 @@
         "y": 43
       },
       "id": 56,
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_INFLUXDB}",
-          "decimals": 2,
-          "fill": 0,
-          "gridPos": {
-            "h": 7,
-            "w": 8,
-            "x": 0,
-            "y": 44
-          },
-          "id": 62,
-          "interval": "1s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": true,
-            "show": true,
-            "sideWidth": null,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "repeat": null,
-          "repeatDirection": "h",
-          "scopedVars": {
-            "ceph": {
-              "selected": true,
-              "text": "ceph01",
-              "value": "ceph01"
-            }
-          },
-          "seriesOverrides": [
-            {
-              "alias": "/write/",
-              "transform": "negative-Y"
-            },
-            {
-              "alias": "/read/"
-            },
-            {
-              "alias": "/total/",
-              "bars": false,
-              "color": "rgb(79, 164, 176)",
-              "dashLength": 2,
-              "dashes": true,
-              "fill": 1,
-              "lines": true,
-              "linewidth": 2,
-              "spaceLength": 2,
-              "stack": false
-            },
-            {
-              "alias": ""
-            },
-            {
-              "alias": ""
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_name $col",
-              "groupBy": [
-                {
-                  "params": [
-                    "name"
-                  ],
-                  "type": "tag"
-                }
-              ],
-              "hide": false,
-              "measurement": "diskio",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT derivative(last(\"read_bytes\"), 1s) AS \"read\", derivative(last(\"write_bytes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/) AND $timeFilter GROUP BY \"name\", time($__interval)",
-              "rawQuery": true,
-              "refId": "B",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "read_bytes"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [
-                      "1s"
-                    ],
-                    "type": "non_negative_derivative"
-                  },
-                  {
-                    "params": [
-                      "read bytes/sec"
-                    ],
-                    "type": "alias"
-                  }
-                ],
-                [
-                  {
-                    "params": [
-                      "write_bytes"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [
-                      "1s"
-                    ],
-                    "type": "non_negative_derivative"
-                  },
-                  {
-                    "params": [
-                      "write bytes/sec"
-                    ],
-                    "type": "alias"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$host$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "name",
-                  "operator": "=~",
-                  "value": "/^sd[a-z]+$/"
-                }
-              ]
-            },
-            {
-              "alias": "$host $col",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "name"
-                  ],
-                  "type": "tag"
-                }
-              ],
-              "hide": false,
-              "measurement": "diskio",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT derivative(sum(\"write_bytes\"), 1s) as \"total write\", derivative(sum(\"read_bytes\"), 1s) as \"total read\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/)  AND $timeFilter GROUP BY time($__interval)",
-              "rawQuery": true,
-              "refId": "C",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "write_bytes"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$host$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Ceph Disk Throughput - $ceph",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "decimals": null,
-              "format": "Bps",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "decimals": null,
-              "format": "Bps",
-              "label": "",
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_INFLUXDB}",
-          "fill": 0,
-          "gridPos": {
-            "h": 7,
-            "w": 8,
-            "x": 8,
-            "y": 44
-          },
-          "id": 60,
-          "interval": "1s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "repeat": null,
-          "repeatDirection": "h",
-          "scopedVars": {
-            "ceph": {
-              "selected": true,
-              "text": "ceph01",
-              "value": "ceph01"
-            }
-          },
-          "seriesOverrides": [
-            {
-              "alias": "/read/",
-              "transform": "negative-Y"
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_name $col",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "name"
-                  ],
-                  "type": "tag"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "diskio",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "C",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "reads"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
-                  },
-                  {
-                    "params": [
-                      "1s"
-                    ],
-                    "type": "derivative"
-                  },
-                  {
-                    "params": [
-                      "read"
-                    ],
-                    "type": "alias"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$ceph$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "name",
-                  "operator": "=~",
-                  "value": "/^[s|d|v][d][a-z|0-9]$/"
-                }
-              ]
-            },
-            {
-              "alias": "$tag_name $col",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "name"
-                  ],
-                  "type": "tag"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "diskio",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT derivative(last(\"writes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$host$/ AND \"name\" =~ /^[s|d|v][d][a-z|0-9]$/) AND $timeFilter GROUP BY time($__interval), \"name\" fill(null)",
-              "rawQuery": false,
-              "refId": "D",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "writes"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
-                  },
-                  {
-                    "params": [
-                      "1s"
-                    ],
-                    "type": "derivative"
-                  },
-                  {
-                    "params": [
-                      "write"
-                    ],
-                    "type": "alias"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$ceph$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "name",
-                  "operator": "=~",
-                  "value": "/^[s|d|v][d][a-z|0-9]$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Ceph OSD IOPS",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "iops",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "iops",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "${DS_INFLUXDB}",
-          "fill": 0,
-          "gridPos": {
-            "h": 7,
-            "w": 8,
-            "x": 16,
-            "y": 44
-          },
-          "id": 58,
-          "interval": "1s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": false,
-            "min": false,
-            "rightSide": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
-          "percentage": false,
-          "pointradius": 5,
-          "points": false,
-          "renderer": "flot",
-          "repeat": null,
-          "repeatDirection": "h",
-          "scopedVars": {
-            "ceph": {
-              "selected": true,
-              "text": "ceph01",
-              "value": "ceph01"
-            }
-          },
-          "seriesOverrides": [
-            {
-              "alias": "/read/",
-              "transform": "negative-Y"
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_name $col",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "name"
-                  ],
-                  "type": "tag"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "diskio",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "read_time"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
-                  },
-                  {
-                    "params": [
-                      "1s"
-                    ],
-                    "type": "derivative"
-                  },
-                  {
-                    "params": [
-                      "read latency"
-                    ],
-                    "type": "alias"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$ceph$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "name",
-                  "operator": "=~",
-                  "value": "/^[s|d|v][d][a-z|0-9]$/"
-                }
-              ]
-            },
-            {
-              "alias": "$tag_name $col",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "name"
-                  ],
-                  "type": "tag"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "diskio",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "B",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "write_time"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
-                  },
-                  {
-                    "params": [
-                      "1s"
-                    ],
-                    "type": "derivative"
-                  },
-                  {
-                    "params": [
-                      "write latency"
-                    ],
-                    "type": "alias"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "host",
-                  "operator": "=~",
-                  "value": "/^$ceph$/"
-                },
-                {
-                  "condition": "AND",
-                  "key": "name",
-                  "operator": "=~",
-                  "value": "/^[s|d|v][d][a-z|0-9]$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Ceph OSD latency",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "ms",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "s",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        }
-      ],
+      "panels": [],
       "repeat": "ceph",
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph01",
+          "value": "ceph01"
+        }
+      },
       "title": "Ceph Graphs",
       "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "decimals": 2,
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 44
+      },
+      "id": 62,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph01",
+          "value": "ceph01"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/write/",
+          "transform": "negative-Y"
+        },
+        {
+          "alias": "/read/"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(last(\"read_bytes\"), 1s) AS \"read\", derivative(last(\"write_bytes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/) AND $timeFilter GROUP BY \"name\", time($__interval)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "read_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "read bytes/sec"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "write_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "write bytes/sec"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^sd[a-z]+$/"
+            }
+          ]
+        },
+        {
+          "alias": "$host $col",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(sum(\"write_bytes\"), 1s) as \"total write\", derivative(sum(\"read_bytes\"), 1s) as \"total read\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/)  AND $timeFilter GROUP BY time($__interval)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "write_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph Disk Throughput - $ceph",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 44
+      },
+      "id": 60,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph01",
+          "value": "ceph01"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/read/",
+          "transform": "negative-Y"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "reads"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "read"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(last(\"writes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$host$/ AND \"name\" =~ /^[s|d|v][d][a-z|0-9]$/) AND $timeFilter GROUP BY time($__interval), \"name\" fill(null)",
+          "rawQuery": false,
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "writes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "write"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph OSD IOPS",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "iops",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "iops",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 44
+      },
+      "id": 58,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph01",
+          "value": "ceph01"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/read/",
+          "transform": "negative-Y"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "read_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "read latency"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "write_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "write latency"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph OSD latency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 51
+      },
+      "id": 74,
+      "panels": [],
+      "repeat": null,
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 56,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph02",
+          "value": "ceph02"
+        }
+      },
+      "title": "Ceph Graphs",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "decimals": 2,
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 52
+      },
+      "id": 75,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 62,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph02",
+          "value": "ceph02"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/write/",
+          "transform": "negative-Y"
+        },
+        {
+          "alias": "/read/"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(last(\"read_bytes\"), 1s) AS \"read\", derivative(last(\"write_bytes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/) AND $timeFilter GROUP BY \"name\", time($__interval)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "read_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "read bytes/sec"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "write_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "write bytes/sec"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^sd[a-z]+$/"
+            }
+          ]
+        },
+        {
+          "alias": "$host $col",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(sum(\"write_bytes\"), 1s) as \"total write\", derivative(sum(\"read_bytes\"), 1s) as \"total read\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/)  AND $timeFilter GROUP BY time($__interval)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "write_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph Disk Throughput - $ceph",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 52
+      },
+      "id": 76,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 60,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph02",
+          "value": "ceph02"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/read/",
+          "transform": "negative-Y"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "reads"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "read"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(last(\"writes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$host$/ AND \"name\" =~ /^[s|d|v][d][a-z|0-9]$/) AND $timeFilter GROUP BY time($__interval), \"name\" fill(null)",
+          "rawQuery": false,
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "writes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "write"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph OSD IOPS",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "iops",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "iops",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 52
+      },
+      "id": 77,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 58,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph02",
+          "value": "ceph02"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/read/",
+          "transform": "negative-Y"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "read_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "read latency"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "write_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "write latency"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph OSD latency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 59
+      },
+      "id": 78,
+      "panels": [],
+      "repeat": null,
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 56,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph03",
+          "value": "ceph03"
+        }
+      },
+      "title": "Ceph Graphs",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "decimals": 2,
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 60
+      },
+      "id": 79,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "sideWidth": null,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 62,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph03",
+          "value": "ceph03"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/write/",
+          "transform": "negative-Y"
+        },
+        {
+          "alias": "/read/"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(last(\"read_bytes\"), 1s) AS \"read\", derivative(last(\"write_bytes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/) AND $timeFilter GROUP BY \"name\", time($__interval)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "read_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "read bytes/sec"
+                ],
+                "type": "alias"
+              }
+            ],
+            [
+              {
+                "params": [
+                  "write_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "non_negative_derivative"
+              },
+              {
+                "params": [
+                  "write bytes/sec"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^sd[a-z]+$/"
+            }
+          ]
+        },
+        {
+          "alias": "$host $col",
+          "groupBy": [
+            {
+              "params": [
+                "$interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
+          "hide": false,
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(sum(\"write_bytes\"), 1s) as \"total write\", derivative(sum(\"read_bytes\"), 1s) as \"total read\" FROM \"diskio\" WHERE (\"host\" =~ /^$ceph$/ AND \"name\" =~ /^[s|v|m]d([0-9]|[a-z]+)$/)  AND $timeFilter GROUP BY time($__interval)",
+          "rawQuery": true,
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "write_bytes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$host$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph Disk Throughput - $ceph",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "decimals": null,
+          "format": "Bps",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 60
+      },
+      "id": 80,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 60,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph03",
+          "value": "ceph03"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/read/",
+          "transform": "negative-Y"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "reads"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "read"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT derivative(last(\"writes\"), 1s) AS \"write\" FROM \"diskio\" WHERE (\"host\" =~ /^$host$/ AND \"name\" =~ /^[s|d|v][d][a-z|0-9]$/) AND $timeFilter GROUP BY time($__interval), \"name\" fill(null)",
+          "rawQuery": false,
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "writes"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "write"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph OSD IOPS",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "iops",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "iops",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influx-telegraf",
+      "fill": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 60
+      },
+      "id": 81,
+      "interval": "1s",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1546295579317,
+      "repeatPanelId": 58,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "ceph": {
+          "selected": false,
+          "text": "ceph03",
+          "value": "ceph03"
+        }
+      },
+      "seriesOverrides": [
+        {
+          "alias": "/read/",
+          "transform": "negative-Y"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "read_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "read latency"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        },
+        {
+          "alias": "$tag_name $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "diskio",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "write_time"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [
+                  "1s"
+                ],
+                "type": "derivative"
+              },
+              {
+                "params": [
+                  "write latency"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=~",
+              "value": "/^$ceph$/"
+            },
+            {
+              "condition": "AND",
+              "key": "name",
+              "operator": "=~",
+              "value": "/^[s|d|v][d][a-z|0-9]$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Ceph OSD latency",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": false,
@@ -4968,8 +8370,14 @@
     "list": [
       {
         "allValue": "",
-        "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": "influx-telegraf",
+        "definition": "",
         "hide": 0,
         "includeAll": true,
         "label": null,
@@ -4989,8 +8397,12 @@
       },
       {
         "allValue": null,
-        "current": {},
-        "datasource": "${DS_INFLUXDB}",
+        "current": {
+          "text": "shockwave",
+          "value": "shockwave"
+        },
+        "datasource": "influx-telegraf",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -5011,7 +8423,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -5043,5 +8455,5 @@
   "timezone": "browser",
   "title": "Plex Data",
   "uid": "ct-HnkBik",
-  "version": 61
+  "version": 8
 }
