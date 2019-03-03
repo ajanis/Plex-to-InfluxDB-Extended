@@ -74,6 +74,7 @@ class plexInfluxdbCollector():
             return
 
         if self.output and self.config.valid_log_levels[level.upper()] >= self.config.logging_print_threshold:
+            msg = str(msg).encode('ascii', 'ignore').decode('ascii')
             print(msg)
 
         # Make sure a good level was given
